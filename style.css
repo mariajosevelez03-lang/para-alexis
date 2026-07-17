@@ -110,18 +110,28 @@ p {
 
 .tarjeta {
     background-color: rgb(228, 247, 151);
-    padding: 30px;
+    padding: 20px; /* Reducimos un poquito el relleno para ganar espacio en celular */
     border-radius: 20px;
     box-shadow: 0px 10px 25px rgba(44, 77, 33, 0.356);
     text-align: center;
-    max-width: 990px;
-    width: 90%;
+    max-width: 500px; /* 🌟 CAMBIO: Achicamos el ancho máximo para que en ningún dispositivo se vea "gigante" o estirado */
+    width: 85%; /* 🌟 CAMBIO: Dejamos un margen del 15% libre a los lados en el celular para que respire */
     margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* 🌟 CAMBIO: En celulares, fuerza a que la foto vaya arriba y la carta abajo, ¡así no se amontonan de lado! */
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
+}
+
+.oculto {
+    display: none;
+    width: 100%; /* 🌟 CAMBIO: Obliga a la carta a ocupar todo el ancho disponible de la tarjeta de forma fluida */
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px; /* 🌟 NUEVO: Le da un aire al texto por dentro para que no choque con los bordes */
+    box-sizing: border-box; /* 🌟 NUEVO: Evita que el padding rompa el tamaño del cuadro */
 }
 
 .foto-cumple {
@@ -151,15 +161,6 @@ button {
 #btnSi:hover {
     background-color: #ff758f;
     transform: scale(1.05);
-}
-
-.oculto {
-    display: none;
-    flex: 1;
-    min-width: 280px;
-    text-align: left;
-    max-height: 400px;
-    overflow-y: auto;
 }
 
 /* 💋 BESOS FLOTANTES */
